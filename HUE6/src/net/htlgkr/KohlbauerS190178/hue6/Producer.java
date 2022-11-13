@@ -32,27 +32,13 @@ public class Producer implements Runnable {
     public void run() {
 
 
-           /*reidinger code for(int i = 0; i < numberOfItems; i++){
-                try {
-                    boolean right = storage.put(i);
 
-                    while(!right){
-                        Thread.sleep(sleepTime);
-                        right = storage.put(i);
-                    }
-
-                    sent.add(i);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            storage.setProductionComplete();*/
 
 
         for (int i = 0; i < numberOfItems; i++) {
             try {
                 while (!storage.put(i)) {
-                    System.out.println("I DUA SCHLAFEN");
+                    System.out.println("PRODUCER SLEEPING...");
                     Thread.sleep(sleepTime);
                 }
 
@@ -61,7 +47,7 @@ public class Producer implements Runnable {
                 e.printStackTrace();
             }
         }
-        System.out.println("i bi fechde midn produziern");
+        System.out.println("PRODUCER FINISHED");
         storage.setProductionComplete();
     }
 }

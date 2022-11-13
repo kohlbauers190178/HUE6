@@ -58,27 +58,6 @@ public class Consumer implements Runnable {
             }
         }
 
-/*
-        while (running) {
-            Integer n = storage.get();
-
-            if(n==null&&storage.isProductionComplete()){
-                break;
-            }
-
-            if (n != null) {
-                received.add(n);
-
-                try {
-                    Thread.sleep(sleepTime);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                running = false;
-                System.out.println("i geh ausse vom fressn consumen");
-            }
-        }*/
 
     }
 }
